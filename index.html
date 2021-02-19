@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
+  <title>Väder-API</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
@@ -13,11 +13,62 @@
 </head>
 
 <body>
+
+
   <script src="scripts.js"></script>
 
-  <h1>Inlämningsuppgift 2</h1>
-  <p id="demo">Här är min Inlämningsuppgift 2 för kursen Grundläggande Frontendutveckling</p>
-  <button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+  <div class="header"><h1> City Travel</h1>
+
+
+
+  
+  
+
+
+
+
+</div>
+
+
+  <div class="search">Weather in Gothenburg
+
+    <form action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit">Go</button>
+      </form>
+
+    <h1>Inlämningsuppgift 2</h1>
+    <p id="demo">Här är min Inlämningsuppgift 2 för kursen Grundläggande Frontendutveckling</p>
+    <button onclick="displayDate()">The time is? (function from scripts.js)</button> 
+    <button onclick="document.getElementById('demo').innerHTML=Date()">The time is? (Js written in HTML-file</button>
+    <button onclick="document.getElementById('demo').innerHTML='Här är min Inlämningsuppgift 2 för kursen Grundläggande Frontendutveckling'">Reset p-tag</button>
+
+  </div>
+
+  <div class="main">
+
+<div class="mainTop">
+Göteborg
+    <div class="mainTopBox">Gothenburg!</div>
+
+</div>
+
+
+<div class="mainBottom">
+
+    <div class="mainBottomContainerBox">
+    <div class="mainBottomContainerBoxItem"></div>
+    <div class="mainBottomContainerBoxItem"></div>
+    <div class="mainBottomContainerBoxItem"></div>
+
+
+</div>
+</div>
+
+</div>
+  
+  
+
 
 </body>
 </html>
