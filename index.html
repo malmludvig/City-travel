@@ -19,37 +19,38 @@
 
   <div class="header"><h1> City Travel</h1>
 
-
-
-  
-  
-
-
-
-
 </div>
 
-
-  <div class="search">Weather in Gothenburg
+  <div class="search">
+    <div class="searchContainer">
 
     <form action="/action_page.php">
+
+        <div class="searchBox">
         <input type="text" placeholder="Search.." name="search">
         <button type="submit">Go</button>
+ 
+
+        <div class="checkBox">
+            <input type="radio" name="radio">
+            <label> Only weather</label><br>
+            <input type="radio" name="radio">
+            <label> Only attractions</label><br>
+            <input type="checkbox">
+            <label> Filter alphabetically</label>
+    </div>
+</div>
+    
+    </div>
       </form>
 
-    <h1>Inlämningsuppgift 2</h1>
-    <p id="demo">Här är min Inlämningsuppgift 2 för kursen Grundläggande Frontendutveckling</p>
-    <button onclick="displayDate()">The time is? (function from scripts.js)</button> 
-    <button onclick="document.getElementById('demo').innerHTML=Date()">The time is? (Js written in HTML-file</button>
-    <button onclick="document.getElementById('demo').innerHTML='Här är min Inlämningsuppgift 2 för kursen Grundläggande Frontendutveckling'">Reset p-tag</button>
-
+    
   </div>
 
   <div class="main">
 
 <div class="mainTop">
-Göteborg
-    <div class="mainTopBox">Gothenburg!</div>
+    <div class="mainTopBox"></div>
 
 </div>
 
