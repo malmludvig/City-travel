@@ -15,21 +15,19 @@
 <body>
 
 
-  <script src="scripts.js"></script>
+  
 
-  <div class="header"><h1> City Travel</h1>
+<div class="header"><h1> City Travel</h1>
 
 </div>
 
-  <div class="search">
+  <div class="searchBar">
     <div class="searchContainer">
 
-    <form action="/action_page.php">
 
         <div class="searchBox">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit">Go</button>
- 
+          <input type="text" class="input_text" placeholder="Search for a city" autofocus>
+          <button class="submit" type="submit">Go</button>
 
         <div class="checkBox">
             <input type="radio" name="radio">
@@ -42,7 +40,6 @@
 </div>
     
     </div>
-      </form>
 
     
   </div>
@@ -50,10 +47,13 @@
   <div class="main">
 
 <div class="mainTop">
-    <div class="mainTopBox"></div>
+    <div class="mainTopBox">
+      <p id="weatherTag">
+
+    </p>
+  </div>
 
 </div>
-
 
 <div class="mainBottom">
 
@@ -62,14 +62,11 @@
     <div class="mainBottomContainerBoxItem"></div>
     <div class="mainBottomContainerBoxItem"></div>
 
-
 </div>
 </div>
-
 </div>
-  
-  
 
+<script src="scripts.js"></script>
 
 </body>
 </html>
