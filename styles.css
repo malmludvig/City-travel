@@ -73,6 +73,7 @@ body {
 }
 
 .mainBottomContainerBoxItem{
+    overflow : hidden;
     background-color: white;
     display: inline-block;
     position:relative;
