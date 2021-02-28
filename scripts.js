@@ -111,4 +111,3 @@ searchButton.addEventListener('click', function () {
 	}
 
 });
-
