@@ -3,7 +3,7 @@ const searchButton = document.querySelector(".submit");
 function sortAlphabetically(a, b) {
 
 	a.name.toLowerCase(), b.name.toLowerCase();
-	
+
 	if (a.name < b.name) {
 		return -1;
 	}
@@ -16,7 +16,6 @@ function sortAlphabetically(a, b) {
 function drawWeather(data) {
 	var celcius = Math.round(parseFloat(data.main.temp) - 273.15);
 	let iconUrl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-
 	document.getElementById('weatherTag').innerHTML = "<img src='" + iconUrl + "'<br><br>" + data.name + "<br>" + celcius + " °";
 
 }
@@ -28,45 +27,39 @@ function weatherFunction(searchInput) {
 	fetch(url1)
 		.then(res => res.json())
 		.then(function (data) {
-
-
 			try {
 				drawWeather(data)
-			}
-			  catch(err) {
+			} catch (err) {
 				alert("Error, something went wrong! See the console for more info.")
 				console.log(err)
-			  }			
+			}
 		})
 }
 
 function drawVenues(data) {
 
-let venuesArray = data.response.venues.map(function(venue) { 
-	return {
-	key: venue,
-	name: venue.name,
-	address: venue.location.address,
-	iconPrefix: venue.categories[0].icon.prefix,
-	iconSuffix: venue.categories[0].icon.suffix
-}});
+	let venuesArray = data.response.venues.map(function (venue) {
+		return {
+			key: venue,
+			name: venue.name,
+			address: venue.location.address,
+			iconPrefix: venue.categories[0].icon.prefix,
+			iconSuffix: venue.categories[0].icon.suffix
+		}
+	});
 
-console.log(venuesArray)
 
 	if (document.getElementById('sortCheck').checked) {
 
 		venuesArray.sort(sortAlphabetically);
 	}
 
-	iconUrl = venuesArray[0].iconPrefix + "64" +venuesArray[0].iconSuffix; 
 
-	document.getElementById('venueTag1').innerHTML = "<img src='" + iconUrl + "'<br>" +venuesArray[0].name + " <br> <span class='venueAddressFont'>" + venuesArray[0].address + "</span>";
-	document.getElementById('venueTag2').innerHTML = venuesArray[1].name + " <br> <span class='venueAddressFont'>" + venuesArray[1].address + "</span>";
-	document.getElementById('venueTag3').innerHTML = venuesArray[2].name + " <br> <span class='venueAddressFont'>" + venuesArray[2].address + "</span>";
-	document.getElementById('venueTag4').innerHTML = venuesArray[3].name + " <br> <span class='venueAddressFont'>" + venuesArray[3].address + "</span>";
-	document.getElementById('venueTag5').innerHTML = venuesArray[4].name + " <br> <span class='venueAddressFont'>" + venuesArray[4].address + "</span>";
-	document.getElementById('venueTag6').innerHTML = venuesArray[5].name + " <br> <span class='venueAddressFont'>" + venuesArray[5].address + "</span>";
+	for (i = 0; i < venuesArray.length; i++) {
 
+		iconUrl = venuesArray[i].iconPrefix + "64" + venuesArray[i].iconSuffix;
+		document.getElementById(`venueTag${i}`).innerHTML = "<img src='" + iconUrl + "'<br><br>" + venuesArray[i].name + " <br> <span class='venueAddressFont'>" + venuesArray[i].address + "</span>";
+	}
 }
 
 function venuesFunction(searchInput) {
@@ -80,11 +73,10 @@ function venuesFunction(searchInput) {
 			console.log(data)
 			try {
 				drawVenues(data)
-			}
-			  catch(err) {
+			} catch (err) {
 				alert("Error, something went wrong! See the console for more info.")
 				console.log(err)
-			  }	
+			}
 		})
 }
 
@@ -99,9 +91,11 @@ searchButton.addEventListener('click', function () {
 
 	} else if (document.getElementById('onlyWeather').checked) {
 
-		document.getElementById('venueTag1').innerHTML = "";
-		document.getElementById('venueTag2').innerHTML = "";
-		document.getElementById('venueTag3').innerHTML = "";
+
+		for (i = 0; i < 5; i++) {
+
+			document.getElementById(`venueTag${i}`).innerHTML = "";
+		}
 		weatherFunction(searchInput);
 
 	} else if (document.getElementById('onlyVenues').checked) {

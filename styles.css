@@ -1,121 +1,122 @@
 body {
-    margin:0px;
-    padding: 0px;
-    font-size: 120%;
-    background-color: green;
+	margin: 0px;
+	padding: 0px;
+	font-size: 120%;
+	background-color: white;
+	background-image: url("bkg.png");
+	background-size: cover;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+	color: white;
+}
+
+img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+label {
+	color: white;
 }
 
 .header {
-
-    width:100%;
-    height:auto;
-    background-color: white;
-    border-bottom: 3px solid black;
-    margin-bottom:8px;
-    margin-top: 4px;
-
-    
-
+	width: 100%;
+	height: auto;
+	margin-bottom: 8px;
+	margin-top: 4px;
 }
 
 .searchBar {
-
-    width:100%;
-    height:auto;
-    background-color: white;
-    text-align:center;
-    margin-top:40px;
-
-
+	width: 100%;
+	height: auto;
+	text-align: center;
+	margin-top: 40px;
 }
 
 .main {
-
-    width:100%;
-    background-color: white;
-    border-top: 3px solid black;
-
-
-
+	width: 100%;
 }
 
-.mainTop{
-    height: 200px;
-    position: relative;
+.mainTop {
+	height: 173px;
+	position: relative;
 }
 
-.mainTopBox{
-
-    text-align: center;
-    width: 166px;
-    height: 166px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-color: white;
-    box-shadow:0px 0px 0px 1px black inset;
-
+.mainTopBox {
+	border-radius: 5px;
+	color: white;
+	text-align: center;
+	width: 166px;
+	height: 166px;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	box-shadow: 0px 0px 0px 1px black inset;
+	background-color: rgba(0, 186, 255, 0.759);
 }
 
-.mainBottom{
-    width:100%;
-    height:15em;
-    background-color: white;
+.mainBottom {
+	width: 100%;
+	height: 15em;
 }
 
-.mainBottomContainerBox{
-    background-color: white;
-    width: 500px;
-    margin-left:auto;
-    margin-right:auto;
+.mainBottomContainerBox {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.mainBottomContainerBoxItem{
-    overflow : hidden;
-    background-color: green;
-    display: inline-block;
-    position:relative;
-    top:1px;
-    left:1px;
-    width: 100px;
-    height: 100px;
-    margin: -0.09em;
-    padding:33px;
-    box-shadow:0px 0px 0px 1px black inset;
+.mainBottomContainerBoxItem {
+	overflow: auto;
+	background-color: rgba(0, 186, 255, 0.759);
+	color: white;
+	border-radius: 5px;
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	left: 1px;
+	width: 166px;
+	height: 160px;
+	margin: -0.09em;
+	padding: 0px;
+	box-shadow: 0px 0px 0px 1px black inset;
+	text-align: center;
 }
 
-.venueAddressFont{
-    font-size: 70%;
+.venueAddressFont {
+	font-size: 70%;
 }
 
-.centerText{
-    text-align: center;
-    margin-left: auto;
-    margin-right:auto;
-    color:green;
+.centerText {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	color: green;
 }
 
-h1{
-    margin-top: 0;
+h1 {
+	margin-top: 0;
+	color: white;
 }
 
 .searchContainer {
-    margin-left:auto;
-    margin-right:auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.searchBox{
-    display:inline-block;
-
+.searchBox {
+	display: inline-block;
 }
 
-.checkBox{
-    position:relative;
-    width:200px;
-    left:220px;
-    bottom:40px;
-    text-align:left;
+.checkBox {
+	position: relative;
+	width: 200px;
+	left: 220px;
+	bottom: 40px;
+	text-align: left;
 }

@@ -1,99 +1,69 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>Väder-API</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="styles.css">
-
-</head>
-
-<body>
-
-
-  
-
-<div class="header"><h1> City Travel</h1>
-
-</div>
-
-  <div class="searchBar">
-    <div class="searchContainer">
-
-
-        <div class="searchBox">
-          <input type="text" class="input_text" placeholder="Search for a city" autofocus>
-          <button class="submit" type="submit">Go</button>
-
-        <div class="checkBox">
-          <form>
-            <input type="radio" name="radio" id="onlyWeather">
-            <label> Only weather</label><br>
-            <input type="radio" name="radio" id="onlyVenues">
-            <label> Only attractions</label><br>
-            <input type="checkbox" id="sortCheck">
-            <label> Filter alphabetically</label>
-          </form>
-    </div>
-</div>
-    
-    </div>
-
-    
-  </div>
-
-  <div class="main">
-
-<div class="mainTop">
-    <div class="mainTopBox">
-      
-      <p id="weatherTag">
-
-    </p>
-  </div>
-
-</div>
-
-<div class="mainBottom">
-
-    <div class="mainBottomContainerBox">
-    <div class="mainBottomContainerBoxItem">
-    <span id="venueTag1"></span>
-    </div>
-    <div class="mainBottomContainerBoxItem">
-    <span id="venueTag2"></span>
-    </div>
-    <div class="mainBottomContainerBoxItem">
-    <span id="venueTag3"></span>
-    </div>
-
-</div>
-
-<div class="mainBottom">
-
-  <div class="mainBottomContainerBox">
-  <div class="mainBottomContainerBoxItem">
-  <span id="venueTag4"></span>
-  </div>
-  <div class="mainBottomContainerBoxItem">
-  <span id="venueTag5"></span>
-  </div>
-  <div class="mainBottomContainerBoxItem">
-  <span id="venueTag6"></span>
-  </div>
-
-</div>
-
-
-
-
-</div>
-</div>
-<script src="scripts.js"></script>
-
-</body>
+   <head>
+      <meta charset="utf-8">
+      <title>Väder-API</title>
+      <meta name="description" content="The HTML5 Herald">
+      <meta name="author" content="SitePoint">
+      <link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+      <div class="header">
+         <h1> City Travel</h1>
+      </div>
+      <div class="searchBar">
+         <div class="searchContainer">
+            <div class="searchBox">
+               <input type="text" class="input_text" placeholder="Search for a city" autofocus>
+               <button class="submit" type="submit">Go</button>
+               <div class="checkBox">
+                  <form>
+                     <input type="radio" name="radio" id="onlyWeather">
+                     <label> Only weather</label><br>
+                     <input type="radio" name="radio" id="onlyVenues">
+                     <label> Only attractions</label><br>
+                     <input type="radio" name="radio" id="both" checked="checked">
+                     <label> Both</label><br>
+                     <input type="checkbox" id="sortCheck">
+                     <label> Filter alphabetically</label>
+                  </form>
+               </div>
+            </div>
+          </div>
+      </div>
+      <div class="main">
+      <div class="mainTop">
+         <div class="mainTopBox">
+            <p id="weatherTag">
+            </p>
+         </div>
+      </div>
+      <div class="mainBottom">
+         <div class="mainBottomContainerBox">
+            <div class="mainBottomContainerBoxItem">
+               <span id="venueTag0"></span>
+            </div>
+            <div class="mainBottomContainerBoxItem">
+               <span id="venueTag1"></span>
+            </div>
+            <div class="mainBottomContainerBoxItem">
+               <span id="venueTag2"></span>
+            </div>
+         </div>
+         <div class="mainBottom">
+            <div class="mainBottomContainerBox">
+               <div class="mainBottomContainerBoxItem">
+                  <span id="venueTag3"></span>
+               </div>
+               <div class="mainBottomContainerBoxItem">
+                  <span id="venueTag4"></span>
+               </div>
+               <div class="mainBottomContainerBoxItem">
+                  <span id="venueTag5"></span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="scripts.js"></script>
+   </body>
 </html>
