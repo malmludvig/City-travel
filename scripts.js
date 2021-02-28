@@ -1,5 +1,20 @@
 const searchButton = document.querySelector(".submit");
 
+
+
+function sortAlphabetically(a, b) {
+
+	a.name.toLowerCase(), b.name.toLowerCase();
+	
+	if (a.name < b.name) {
+		return -1;
+	}
+	if (a.name > b.name) {
+		return 1;
+	}
+	return 0;
+}
+
 function drawWeather(data) {
 	var celcius = Math.round(parseFloat(data.main.temp) - 273.15);
 	let iconUrl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
@@ -16,83 +31,62 @@ function weatherFunction(searchInput) {
 		.then(res => res.json())
 		.then(function (data) {
 
-			console.log(data)
-			drawWeather(data)
 
+			try {
+				drawWeather(data)
+			}
+			  catch(err) {
+				alert("Error, something went wrong! See the console for more info.")
+				console.log(err)
+			  }			
 		})
 }
 
 function drawVenues(data) {
 
-	//let venuesArray = [data.response.venues[0].name, data.response.venues[1].name, data.response.venues[2].name];
+let venuesArray = data.response.venues.map(function(venue) { 
+	return {
+	key: venue,
+	name: venue.name,
+	address: venue.location.address,
+	iconPrefix: venue.categories[0].icon.prefix,
+	iconSuffix: venue.categories[0].icon.suffix
+}});
 
-  var numbers = [0, 1, 2, 3, 4, 5];
-  var x = numbers.map(myFunction)
-
-  function myFunction(func){
-
-  }
-
-
-	let venuesArray = [{
-		name: data.response.venues[0].name,
-		address: data.response.venues[0].location.address
-	}, {
-		name: data.response.venues[1].name,
-		address: data.response.venues[1].location.address
-	}, {
-		name: data.response.venues[2].name,
-		address: data.response.venues[2].location.address,
-	}, {
-		name: data.response.venues[3].name,
-		address: data.response.venues[3].location.address,
-	}, {
-		name: data.response.venues[4].name,
-		address: data.response.venues[4].location.address,
-	}, {
-		name: data.response.venues[5].name,
-		address: data.response.venues[5].location.address,
-	}]
-	console.log(venuesArray)
-
+console.log(venuesArray)
 
 	if (document.getElementById('sortCheck').checked) {
 
-		function sortAlphabetically(a, b) {
-			if (a.name < b.name) {
-				return -1;
-			}
-			if (a.name > b.name) {
-				return 1;
-			}
-			return 0;
-		}
-
 		venuesArray.sort(sortAlphabetically);
-
-
 	}
 
-	document.getElementById('venueTag1').innerHTML = venuesArray[0].name + " <br>" + venuesArray[0].address;
-	document.getElementById('venueTag2').innerHTML = venuesArray[1].name + " <br>" + venuesArray[1].address;
-	document.getElementById('venueTag3').innerHTML = venuesArray[2].name + " <br>" + venuesArray[2].address;
-	document.getElementById('venueTag4').innerHTML = venuesArray[3].name + " <br>" + venuesArray[3].address;
-	document.getElementById('venueTag5').innerHTML = venuesArray[4].name + " <br>" + venuesArray[4].address;
-	document.getElementById('venueTag6').innerHTML = venuesArray[5].name + " <br>" + venuesArray[5].address
+	iconUrl = venuesArray[0].iconPrefix + "64" +venuesArray[0].iconSuffix; 
+
+	document.getElementById('venueTag1').innerHTML = "<img src='" + iconUrl + "'<br>" +venuesArray[0].name + " <br> <span class='venueAddressFont'>" + venuesArray[0].address + "</span>";
+	document.getElementById('venueTag2').innerHTML = venuesArray[1].name + " <br> <span class='venueAddressFont'>" + venuesArray[1].address + "</span>";
+	document.getElementById('venueTag3').innerHTML = venuesArray[2].name + " <br> <span class='venueAddressFont'>" + venuesArray[2].address + "</span>";
+	document.getElementById('venueTag4').innerHTML = venuesArray[3].name + " <br> <span class='venueAddressFont'>" + venuesArray[3].address + "</span>";
+	document.getElementById('venueTag5').innerHTML = venuesArray[4].name + " <br> <span class='venueAddressFont'>" + venuesArray[4].address + "</span>";
+	document.getElementById('venueTag6').innerHTML = venuesArray[5].name + " <br> <span class='venueAddressFont'>" + venuesArray[5].address + "</span>";
 
 }
 
 function venuesFunction(searchInput) {
 
-	const url2 = 'https://api.foursquare.com/v2/venues/search?near=' + searchInput + '&limit=10&client_id=MWUVZLCCQRKDNGXZRGGLIUVBW04U0ETEPAQPJZBE2X3QV2MR&client_secret=YF4IVTB1ZNP03GHZ2LB5XUIHRERLNYMFW32BNOSEOCZWZJTW&v=20210226'
+	const url2 = `https://api.foursquare.com/v2/venues/search?client_id=MWUVZLCCQRKDNGXZRGGLIUVBW04U0ETEPAQPJZBE2X3QV2MR&client_secret=YF4IVTB1ZNP03GHZ2LB5XUIHRERLNYMFW32BNOSEOCZWZJTW&near=${searchInput}&limit=6&v=20210226`
 
 	fetch(url2)
 		.then(res => res.json())
 		.then(function (data) {
 
-			drawVenues(data)
 			console.log(data)
-
+			try {
+				drawVenues(data)
+			}
+			  catch(err) {
+				alert("Error, something went wrong! See the console for more info.")
+				console.log(err)
+			  }	
 		})
 }
 
