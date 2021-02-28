@@ -1,7 +1,5 @@
 const searchButton = document.querySelector(".submit");
 
-
-
 function sortAlphabetically(a, b) {
 
 	a.name.toLowerCase(), b.name.toLowerCase();

@@ -1,0 +1,29 @@
+[33mcommit 350f999770860f5ff1ca11b36cff7ae2bb0eb238[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Ludvig <malmludvig@gmail.com>
+Date:   Sun Feb 28 14:26:38 2021 +0100
+
+    Added functionality for venue icons
+
+[33mcommit a2fc931d1dfa5bc4300de14d013ca46fc3fdf30b[m
+Author: Ludvig <malmludvig@gmail.com>
+Date:   Fri Feb 26 15:54:46 2021 +0100
+
+    Added new sorting function
+
+[33mcommit e8df9cbd59c8321e310aa08eee9a55c560aecabe[m
+Author: Ludvig <malmludvig@gmail.com>
+Date:   Fri Feb 26 13:54:40 2021 +0100
+
+    Added array of venue objects
+
+[33mcommit a13e1805f4400751968068dc400ca7b3cfabeebc[m
+Author: Ludvig <malmludvig@gmail.com>
+Date:   Thu Feb 25 22:57:36 2021 +0100
+
+    Added sort and weather icons
+
+[33mcommit a398175256e6e09905a47442ba53fbee3b6184bd[m
+Author: Ludvig <malmludvig@gmail.com>
+Date:   Wed Feb 24 19:16:36 2021 +0100
+
+    Added asynchronous search functionality for both APIs
