@@ -92,6 +92,10 @@ label {
 	font-size: 70%;
 }
 
+.weatherDescriptionFont {
+	font-size: 70%;
+}
+
 .centerText {
 	text-align: center;
 	margin-left: auto;
